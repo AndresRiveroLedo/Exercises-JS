@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Objetos anidados</title>
+</head>
+
+<body>
+    <h2>Objetos Anidados</h2>
+    <p>Acceso a los objetos</p>
+    <p>Acces a property with .property: <span id="punto"></span></p>
+    <p>Acces a property with [property]: <span id="corchete"></span></p>
+    <p>Acces a property with [property]: <span id="corcheteCorchete"></span></p>
+    <p>Acces a property with [property]: <span id="demo"></span></p>
+    <p>Acces a property with [property]: <span id="demo1"></span></p>
+    <script>
+        const person = {
+            fName: 'Andres',
+            lName: 'Rivero',
+            cars: {
+                car1: 'Ford',
+                car2: 'Chevrolet',
+                car3: 'Mazda'
+            }
+        }
+
+        document.getElementById('punto').innerHTML = person.cars.car1;
+        document.getElementById('corchete').innerHTML = person.cars['car2'];
+        document.getElementById('corcheteCorchete').innerHTML = person['cars']['car3'];
+
+        //variables
+        let p1 = "cars";
+        let p2 = "car2";
+        document.getElementById("demo").innerHTML = person[p1][p2];
+        //MAL: Faltan las comillas
+        let c1 = cars;
+        let c2 = car2;
+        document.getElementById('demo1').innerHTML = person[c1][c2];
+    </script>
+</body>
+
+</html>

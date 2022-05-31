@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavasScript Object Porperties</h2>
+    <p>Acces a property with .property: <span id="punto"></span></p>
+    <p>Acces a property with [property]: <span id="corchete"></span></p>
+    <p>Acces a property with .property: <span id="nac"></span></p>
+    <p>Acces a property with [property]: <span id="lang"></span></p>
+    <p>Acces a property with Loop(for... in): <span id="loop"></span></p>
+
+    <p>Acces a property with .property: <span id="nac1"></span></p>
+    <p>Acces a property with [property]: <span id="lang1"></span></p>
+
+
+    <script>
+        const person = {
+            firstName : 'Andres',
+            lasteName : 'Rivero',
+            age : '36',
+            eyecolor: 'blue'
+        }
+
+        document.getElementById('punto').innerHTML = person.firstName + " is "+ person.age + " years old.";
+        document.getElementById('corchete').innerHTML = person["firstName"] + " is "+ person["age"] + " years old.";
+        
+        //Añadimos nuevas propieades
+        person.nacionality = 'Spanish';
+        person["lang"] = 'Spanished';
+
+        //Recorremos el objeto.
+        document.getElementById('nac').innerHTML = person.nacionality;
+        document.getElementById('lang').innerHTML = person["lang"];
+
+        //Bucle for... in (recorreremos todos los valores del objeto)
+        let valores = "";
+        for(let x in person){
+            valores += person[x] + " ";
+        }
+        document.getElementById('loop').innerHTML = valores;
+
+        //Eliminación de propiedades del objeto
+        delete person.nacionality;
+        delete person["lang"];
+        document.getElementById('nac1').innerHTML = person.nacionality;
+        document.getElementById('lang1').innerHTML = person["lang"];
+   </script>
+</body>
+</html>
